@@ -7,6 +7,9 @@ import Contact from "./Contact";
 import Hero from "./Hero";
 import FeaturedProducts from "./FeaturedProducts";
 import Services from "./Services";
+import ProductImages from "./ProductImages";
+import AddToCart from "./AddToCart";
+import Stars from "./Stars";
 
 export {
   Navbar,
@@ -18,4 +21,7 @@ export {
   Hero,
   FeaturedProducts,
   Services,
+  ProductImages,
+  AddToCart,
+  Stars,
 };
