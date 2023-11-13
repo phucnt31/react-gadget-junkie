@@ -1,7 +1,7 @@
 import React, { useEffect, useContext, useReducer, createContext } from "react";
 import reducer from "../reducers/filter_reducer";
 import { useProductsContext } from "./products_context";
-import { LOAD_PRODUCTS } from "../actions";
+import { LOAD_PRODUCTS, SET_GRID_VIEW, SET_LIST_VIEW } from "../actions";
 
 const initialState = {
   filtered_products: [],
@@ -19,8 +19,15 @@ export const FilterProvider = ({ children }) => {
     dispatch({ type: LOAD_PRODUCTS, payload: products });
   }, [products]);
 
+  const setGridView = () => {
+    dispatch({ type: SET_GRID_VIEW });
+  };
+  const setListView = () => {
+    dispatch({ type: SET_LIST_VIEW });
+  };
+
   return (
-    <FilterContext.Provider value={{ ...state }}>
+    <FilterContext.Provider value={{ ...state, setGridView, setListView }}>
       {children}
     </FilterContext.Provider>
   );
