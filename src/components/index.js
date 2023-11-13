@@ -10,6 +10,8 @@ import Services from "./Services";
 import ProductImages from "./ProductImages";
 import AddToCart from "./AddToCart";
 import Stars from "./Stars";
+import Error from "./Error";
+import Loading from "./Loading";
 
 export {
   Navbar,
@@ -24,4 +26,6 @@ export {
   ProductImages,
   AddToCart,
   Stars,
+  Error,
+  Loading,
 };
