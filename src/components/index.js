@@ -12,6 +12,9 @@ import AddToCart from "./AddToCart";
 import Stars from "./Stars";
 import Error from "./Error";
 import Loading from "./Loading";
+import Sort from "./Sort";
+import ProductList from "./ProductList";
+import Filters from "./Filters";
 
 export {
   Navbar,
@@ -28,4 +31,7 @@ export {
   Stars,
   Error,
   Loading,
+  Sort,
+  ProductList,
+  Filters,
 };
