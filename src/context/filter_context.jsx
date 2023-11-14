@@ -2,6 +2,7 @@ import React, { useEffect, useContext, useReducer, createContext } from "react";
 import reducer from "../reducers/filter_reducer";
 import { useProductsContext } from "./products_context";
 import {
+  CLEAR_FILTERS,
   FILTER_PRODUCTS,
   LOAD_PRODUCTS,
   SET_GRID_VIEW,
@@ -74,7 +75,9 @@ export const FilterProvider = ({ children }) => {
     }
     dispatch({ type: UPDATE_FILTERS, payload: { name, value } });
   };
-  const clearFilters = () => {};
+  const clearFilters = () => {
+    dispatch({ type: CLEAR_FILTERS });
+  };
 
   return (
     <FilterContext.Provider
