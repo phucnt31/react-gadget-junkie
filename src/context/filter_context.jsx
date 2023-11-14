@@ -55,6 +55,11 @@ export const FilterProvider = ({ children }) => {
   const updateFilters = (e) => {
     let name = e.target.name;
     let value = e.target.value;
+    // 2 approaches for getting value from button:
+    // 1. use regular value prop
+    // 2. either use textContent to get text between button
+    // or use dataset.color if the button have a custom prop
+    // in this project at color button is "data-color" prop
     if (name === "category") {
       value = e.target.textContent;
     }

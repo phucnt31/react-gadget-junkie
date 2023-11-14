@@ -103,8 +103,8 @@ const Filters = () => {
                     className={`${
                       color === c ? "color-btn active" : "color-btn"
                     }`}
-                    // data-color={c}
-                    value={c}
+                    data-color={c}
+                    // value={c}
                     onClick={updateFilters}
                   >
                     {color === c && <FaCheck />}
