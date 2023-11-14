@@ -5,6 +5,7 @@ import {
   LOAD_PRODUCTS,
   SET_GRID_VIEW,
   SET_LIST_VIEW,
+  SORT_PRODUCTS,
   UPDATE_SORT,
 } from "../actions";
 
@@ -24,6 +25,9 @@ export const FilterProvider = ({ children }) => {
   useEffect(() => {
     dispatch({ type: LOAD_PRODUCTS, payload: products });
   }, [products]);
+  useEffect(() => {
+    dispatch({ type: SORT_PRODUCTS });
+  }, [products, state.sort]);
 
   const setGridView = () => {
     dispatch({ type: SET_GRID_VIEW });
