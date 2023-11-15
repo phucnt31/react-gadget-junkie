@@ -1,7 +1,12 @@
 import React from "react";
+import { PageHero } from "../components";
 
 const Checkout = () => {
-  return <div>Checkout</div>;
+  return (
+    <main>
+      <PageHero title="checkout" />
+    </main>
+  );
 };
 
 export default Checkout;
