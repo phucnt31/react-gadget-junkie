@@ -2,3 +2,5 @@
   framework = "vite"
   targetPort = 5173
 
+[build]
+functions = "./functions"
