@@ -1,5 +1,4 @@
 import React from "react";
-import logo from "../assets/logo.svg";
 import { Link } from "react-router-dom";
 import { FaTimes } from "react-icons/fa";
 import { links } from "../utils/constants";
@@ -7,6 +6,7 @@ import styled from "styled-components";
 import CartButtons from "./CartButtons";
 import { useProductsContext } from "../context/products_context";
 import { useUserContext } from "../context/user_context";
+import Logo from "./Logo";
 
 const Sidebar = () => {
   const { isSidebarOpen, closeSidebar } = useProductsContext();
@@ -18,7 +18,7 @@ const Sidebar = () => {
         className={`${isSidebarOpen ? "sidebar show-sidebar" : "sidebar"} `}
       >
         <div className="sidebar-header">
-          <img src={logo} alt="comfy sloth" className="logo" />
+          <Logo />
           <button type="button" className="close-btn" onClick={closeSidebar}>
             <FaTimes />
           </button>
