@@ -61,9 +61,32 @@ const CheckoutForm = () => {
     createPaymentIntent();
   }, []);
 
-  const handleChange = async (e) => {};
+  const handleChange = async (e) => {
+    setDisabled(e.empty);
+    setError(e.error ? e.error.message : "");
+  };
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setProcessing(true);
+    const payload = await stripe.confirmCardPayment(clientSecret, {
+      payment_method: {
+        card: elements.getElement(CardElement),
+      },
+    });
+    if (payload.error) {
+      setError(`
+        Payment failed ${payload.error.message}
+      `);
+      setProcessing(false);
+    } else {
+      setError(null);
+      setProcessing(false);
+      setSucceeded(true);
+      setTimeout(() => {
+        clearCart();
+        history.push("/");
+      }, 5000);
+    }
   };
 
   return (
