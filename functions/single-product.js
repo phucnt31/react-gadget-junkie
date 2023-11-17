@@ -1,6 +1,13 @@
 exports.handler = async (event, context, cb) => {
+  const { id } = event.queryStringParameters;
+  if (id) {
+    return {
+      statusCode: 200,
+      body: "single product",
+    };
+  }
   return {
-    statusCode: 200,
-    body: "single product route",
+    statusCode: 400,
+    body: "Please provide product id",
   };
 };
